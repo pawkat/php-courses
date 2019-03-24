@@ -197,37 +197,37 @@ $title = 'Lesson 4'
         пункты меню как элементы массива и вывести их циклом. Подумать, как можно реализовать меню с вложенными подменю?
         Попробовать его реализовать.</p>
     <p>
-        <ul>
+    <ul>
         <?php
-            $list = array(
-                    1,
-                    2 => array(
-                            "2.1",
-                            "2.2",
-                            "2.3"
-                    ),
-                    3,
-                    4,
-                    5,
-                    6,
-                    7
-            );
-            foreach ($list as $key => $item) {
-                echo "<li>";
-                if (is_array($item)) :
-                    echo $key;
-                    echo "<ul>";
-                   foreach ($item as $subitem){
-                       echo "<li>$subitem</li>";
-                   }
-                    echo "</ul>";
-                else :
-                    echo $item;
-                endif;
-                echo "</li>";
-            }
+        $list = array(
+            1,
+            2 => array(
+                "2.1",
+                "2.2",
+                "2.3"
+            ),
+            3,
+            4,
+            5,
+            6,
+            7
+        );
+        foreach ($list as $key => $item) {
+            echo "<li>";
+            if (is_array($item)) :
+                echo $key;
+                echo "<ul>";
+                foreach ($item as $subitem) {
+                    echo "<li>$subitem</li>";
+                }
+                echo "</ul>";
+            else :
+                echo $item;
+            endif;
+            echo "</li>";
+        }
         ?>
-        </ul>
+    </ul>
     </p>
 
 
@@ -237,7 +237,7 @@ $title = 'Lesson 4'
     <p>
         <?php
         for ($i = 0; $i < 10; $i++) :
-        echo $i;
+            echo $i;
         endfor;
         ?>
     </p>
@@ -295,29 +295,29 @@ $title = 'Lesson 4'
         на основе названия статьи в блогах).</p>
     <p>
         <?php
-            $str = "Тестирование функции транслитерации строк и замены пробелов на подчеркивания";
-            echo $str . '<br/>';
-            function translimeration_and_change_spaces($str, $alphabet)
-            {
-                $words = explode(' ', $str);
-                $result = '';
-                for ($i = 0; $i <= count($words); $i++) {
-                    $letters = str_split($words[$i], 2);
-                    for ($j = 0; $j < count($letters); $j++) {
-                        $letter = $letters[$j];
-                        $new_letter = $alphabet[$letter];
-                        $result .= $new_letter;
-                    }
-                    if ($i < count($words) - 1)
-                        $result .= '_';
+        $str = "Тестирование функции транслитерации строк и замены пробелов на подчеркивания";
+        echo $str . '<br/>';
+        function translimeration_and_change_spaces($str, $alphabet)
+        {
+            $words = explode(' ', $str);
+            $result = '';
+            for ($i = 0; $i <= count($words); $i++) {
+                $letters = str_split($words[$i], 2);
+                for ($j = 0; $j < count($letters); $j++) {
+                    $letter = $letters[$j];
+                    $new_letter = $alphabet[$letter];
+                    $result .= $new_letter;
                 }
-                return $result;
+                if ($i < count($words) - 1)
+                    $result .= '_';
             }
+            return $result;
+        }
 
-            $result = translimeration_and_change_spaces($str, $alphabet);
-            $result1 = translimeration_and_change_spaces('Написаная мною функция работает успешно', $alphabet);
-            echo $result . '<br/>';
-            echo $result1 . '<br/>';
+        $result = translimeration_and_change_spaces($str, $alphabet);
+        $result1 = translimeration_and_change_spaces('Написаная мною функция работает успешно', $alphabet);
+        echo $result . '<br/>';
+        echo $result1 . '<br/>';
         ?>
     </p>
 

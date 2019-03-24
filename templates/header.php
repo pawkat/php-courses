@@ -19,7 +19,7 @@ $favicon = 'assets/favicon.ico';
     <link rel="shortcut icon" href="<?php echo $favicon ?>">
 </head>
 <body>
-    <h1><?php echo $title ?></h1>
-    <hr/>
+<h1><?php echo $title ?></h1>
+<hr/>
 
 
