@@ -12,7 +12,7 @@ $title = 'Geekbrains PHP Courses';
 
 
 <?php
-$lessons_arr = array('lesson_4');
+$lessons_arr = array('lesson_3', 'lesson_4');
 foreach ($lessons_arr as $item) {
     echo "<a href='$item.php'>$item</a> <br/>";
 }
