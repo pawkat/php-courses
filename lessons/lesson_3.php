@@ -6,10 +6,12 @@
  * Time: 12:54
  */
 
+
+
+
 $title = 'Lesson 3'
 ?>
-<?php require 'templates/header.php' ?>
-    <h1 style="color: red;"><?php echo $lesson ?></h1>
+<?php include '../templates/header.php' ?>
     <h2 style="color: red;"><?php echo 'Homework' ?></h2>
     <h3 style="color: red;">1.</h3>
     <p>С помощью цикла while вывести все числа в промежутке от 0 до 100, которые делятся на 3 без остатка.</p>
@@ -92,14 +94,7 @@ $title = 'Lesson 3'
         );
 
         foreach ($oblasti as $key => $value) {
-            echo $key . ': <br/>';
-            for ($i = 0; $i < count($value); $i++) {
-                echo $value[$i];
-                if ($i < count($value) - 1)
-                    echo ', ';
-                else
-                    echo '<br/>';
-            }
+            echo $key . ': <br/>'.implode(', ', $value).'<br/>';
         }
         ?>
     </p>
@@ -153,13 +148,13 @@ $title = 'Lesson 3'
         {
             $words = explode(' ', $str);
             $result = '';
-            for ($i = 0; $i <= count($words); $i++) {
+            for ($i = 0; $i < count($words); $i++) {
                 $letters = str_split($words[$i], 2);
-                for ($j = 0; $j <= count($letters); $j++) {
-                    $letter = $letters[$j];
-                    $new_letter = $alphabet[$letter];
-                    $result .= $new_letter;
-                }
+                    for ($j = 0; $j < count($letters); $j++) {
+                        $letter = $letters[$j];
+                        $new_letter = $alphabet[$letter];
+                        $result .= $new_letter;
+                    }
                 $result .= ' ';
             }
             return $result;
@@ -236,9 +231,9 @@ $title = 'Lesson 3'
         for (…){ // здесь пусто}</p>
     <p>
         <?php
-        for ($i = 0; $i < 10; $i++) :
-            echo $i;
-        endfor;
+        $x = '';
+        for ($i = 0; $i < 10; $x .=$i++){}
+        echo $x;
         ?>
     </p>
     <h3 style="color: red;">8.</h3>
@@ -301,7 +296,7 @@ $title = 'Lesson 3'
         {
             $words = explode(' ', $str);
             $result = '';
-            for ($i = 0; $i <= count($words); $i++) {
+            for ($i = 0; $i < count($words); $i++) {
                 $letters = str_split($words[$i], 2);
                 for ($j = 0; $j < count($letters); $j++) {
                     $letter = $letters[$j];
@@ -321,4 +316,4 @@ $title = 'Lesson 3'
         ?>
     </p>
 
-<?php require 'templates/footer.php' ?>
+<?php require '../templates/footer.php' ?>

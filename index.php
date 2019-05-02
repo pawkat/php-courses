@@ -12,9 +12,15 @@ $title = 'Geekbrains PHP Courses';
 
 
 <?php
-$lessons_arr = array('lesson_3', 'lesson_4');
+$dir = scandir('lessons');
+$lessons_arr = array_filter($dir, function ($el){
+    if (strpos($el, '.php')){
+        return $el;
+    }
+});
+
 foreach ($lessons_arr as $item) {
-    echo "<a href='$item.php'>$item</a> <br/>";
+    echo "<a href='lessons/$item'>$item</a> <br/>";
 }
 ?>
 
