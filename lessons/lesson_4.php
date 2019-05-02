@@ -22,7 +22,7 @@ $title = 'Lesson 4'
         $min_path = '../img/min/';
     ?>
     <form action="" method="post" enctype="multipart/form-data">
-        <div><input type="file" name="<?php echo $file_name;?>>"></div>
+        <div><input type="file" name="<?php echo $file_name;?>"></div>
        <div> <input type="submit" value="Submit"></div>
     </form>
     <?php

@@ -1,0 +1,7 @@
+.form__row{
+    display: block;
+    padding: 10px 0;
+}
+.form__row:not(:last-child){
+    /*margin-bottom: 10px;*/
+}
